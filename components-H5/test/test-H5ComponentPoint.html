@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>IT教育网2015课程学习情况</title>
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone{
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+            overflow: hidden;
+        }
+    </style>
+
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+    <!-- 引入散点图的资源 -->
+    <script type="text/javascript" src="../js/H5ComponentPoint.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentPoint.css">
+
+    <body>
+        <!-- 用于开发测试 H5ComponentBase 对象（基本的图文组件） -->
+        <div class="iphone">
+
+        </div>
+
+        <script type="text/javascript">
+        var cfg = {
+                type:'point',
+                height:300,
+                width:300,
+                data:[
+                    ['A项目', 0.4 ,'green'],
+                    ['B项目', 0.2 ,'red',0,0,'-10%' , '-60%' ],
+                    ['C项目', 0.2 ,'orange',0,0, '60%', '160']
+
+                ],
+                css:{
+                    bottom:0,
+                    opacity: 0,
+                },
+                animateIn:{bottom: '40%' , opacity:1},
+                animateOut:{bottom:0 , opacity: 0},
+                center:true
+            }
+            var h5 = new H5ComponentPoint('myname',cfg)
+            $('.iphone').append(h5)
+            var ishide = false;
+            $('body').click(function () {
+                if(ishide){
+                    ishide = false;
+                    $('.h5_component').trigger('onLeave')//.find('point').eq(1)
+
+
+                }else{
+                    ishide = true;
+                    $('.h5_component').trigger('onLoad')//.find('point').eq(1)
+
+                }
+               
+            })
+            $('.h5_component').on('onLeave',function(){
+
+                $(this).find('.point').eq(1).animate({
+                    'left':cfg.data[1][3],
+                    'top':cfg.data[1][4]
+                },'slow',function(){
+                
+                     $(this).next().animate({
+                        'left':cfg.data[2][3],
+                        'top':cfg.data[2][4]
+
+                     })
+
+
+                })
+            })
+             $('.h5_component').on('onLoad',function(){
+                $(this).find('.point').eq(1).animate({
+                    'left':cfg.data[1][5],
+                    'top':cfg.data[1][6]
+                },'slow',function(){
+                         console.log(cfg.data[2][6])
+                    $(this).next().animate({
+                        'left':cfg.data[2][5],
+                        'top':cfg.data[2][6]
+
+                     })
+
+                })
+            })
+
+        </script>
+
+    </body>
+
+</html>

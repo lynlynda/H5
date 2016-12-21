@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+
+    <title>IT教育网2015课程学习情况</title>
+
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-size: 12px;
+        }
+
+        .iphone{
+            width: 340px;
+            height: 540px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -270px 0 0 -170px;
+        }
+    </style>
+
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/H5ComponentBase.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
+
+    <!-- 引入柱图的资源 -->
+    <script type="text/javascript" src="../js/H5ComponentBar.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/H5ComponentBar.css">
+
+    <body>
+        <!-- 用于开发测试 H5ComponentBar 对象（柱图组件） -->
+        <div class="iphone">
+
+        </div>
+
+        <script type="text/javascript">
+        var cfg = {
+                type:'bar',
+                height:530,
+                width:600,
+                data:[
+                    ['javascript', 0.4 ,'#ff7676'],
+                    ['html', 0.2 ,'red'],
+                    ['css3', 0.1 ,'blue'],
+                    ['html5', 0.5 ,'orange'],
+                    ['bootstrap', 0.37 ,'green'],
+                    ['vuejs', 0.6 ,'orange']
+
+                ],
+                css:{
+                    top:100,
+                    opacity:0
+                },
+                animateIn:{top: 200 , opacity:1},
+                animateOut:{bottom:100 , opacity: 0},
+                center:true
+            }
+            var h5 = new H5ComponentBar('mybar',cfg)
+            $('.iphone').append(h5)
+            var ishide = false;
+            $('body').click(function () {
+                if(ishide){
+                    ishide = false;
+                    $('.h5_component').trigger('onLeave')//.find('point').eq(1)
+
+
+                }else{
+                    ishide = true;
+                    $('.h5_component').trigger('onLoad')//.find('point').eq(1)
+
+                }
+               
+            })
+           
+           
+
+        </script>
+
+    </body>
+
+</html>

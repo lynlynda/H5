@@ -1,0 +1,96 @@
+.h5_component_name_bar_v{
+display: -webkit-flex;
+justify-content: space-around;
+}
+.h5_component_name_bar_v .line{
+  width: 58px;
+
+  text-align: center;
+  display: -webkit-flex;
+
+  flex:1;
+  flex-direction: column-reverse;
+
+}
+.h5_component_name_bar_v .line_v{
+  display: -webkit-flex;
+ 
+
+}
+.h5_component_name_bar_v .rate{
+/*  
+  margin-left: 5px;
+  float: left;*/
+  /*height: 100%;*/
+  /*position: relative;*/
+  /*flex: 4;*/
+  /*width: 15px;*/
+  justify-content: center;
+   align-items: flex-end;
+
+
+}
+.h5_component_name_bar_v .rate .bg{
+  background-color: #99c0ff;
+  width: 15px;
+  height: 0;
+ /* position: absolute;
+  left: 0;*/
+  border-radius: 3px;
+   
+
+}
+.h5_component_name_bar_v .per{
+  justify-content: center;
+  align-items: flex-end;
+  max-height: 20px;
+  flex:1;
+  /*width: 20px;*/
+  color: #99c0ff;
+/*  margin-left: 5px;
+*/  /*float: left;*/
+  opacity: 0;
+  text-align: center
+}
+.h5_component_name_bar_v .name{
+  flex:1;
+  /*width: 60px;*/
+  /*float: left;*/
+  max-height: 30px;
+  justify-content: center;
+
+  color: #000;
+  text-align:center;
+}
+
+
+.h5_component_bar_v_load .rate .bg{
+  -webkit-transition: all 1s 0.5s;
+  -o-transition: all 1s 0.5s;
+  transition: all 1s 0.5s;
+  height: 100%;
+
+
+
+}
+.h5_component_bar_v_leave .rate .bg{
+  -webkit-transition: all 1s 0.5s;
+  -o-transition: all 1s 0.5s;
+  transition: all 1s 0.5s;
+  height: 0%;
+  
+
+}
+.h5_component_bar_v_load .per{
+  -webkit-transition: all 1s .5s;
+  -o-transition: all 1s .5s;
+  transition: all 1s .5s;
+  opacity: 1
+}
+.h5_component_bar_v_leave .per{
+  -webkit-transition: all 1s .5s;
+  -o-transition: all 1s .5s;
+  transition: all 1s .5s;
+  opacity: 0
+
+}

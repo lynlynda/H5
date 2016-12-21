@@ -1,0 +1,11 @@
+{
+  "name": "gl-vue-framework",
+  "version": "1.0.0",
+  "description": "",
+  "author": "gl",
+  "license": "ISC",
+  "devDependencies": {},
+  "scripts": {
+    "commit": "sh commit.sh"
+  }
+}

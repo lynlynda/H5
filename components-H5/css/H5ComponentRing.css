@@ -1,0 +1,41 @@
+.h5_component_name_ring{
+}
+
+.h5_component_name_ring canvas{
+  position: absolute;
+/*  background-color: #eee;
+*/  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  
+}
+.h5_component_name_ring .text{
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+  height: 24px;
+  transition: all 1s
+}
+
+
+.h5_component_ring .mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    background-color: #fff;
+    border-radius: 50%;
+    -webkit-transform:scale(.8);
+}
+
+.h5_component_ring .text{
+    width: 100%;
+    top: 40%;
+    opacity: 0;
+}
+.h5_component_ring .text .per{
+}
